@@ -3,11 +3,19 @@ var net = require('net');
 var readableStandardInput =  process.stdin;
 var writableStandardOutput = process.stdout;
 
+process.stdin.setEncoding('utf8');
+
 var client = new net.Socket();
 
 // connects to the server on port 6969
 client.connect(6969, '0.0.0.0', function() {
-  client.write('Hello, server! Love, Client.');
+  // console.log = function(input) {
+// client.username =
+  process.stdout.on('readable', function() {
+    process.stdin.write('Enter username:',function(){
+
+    });
+  });
 });
 
 // sends a message to the server
